@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.example.practies_app_firebase.R
 import com.example.practies_app_firebase.databinding.FragmentNoteListingBinding
+import com.example.practies_app_firebase.util.Uistate
 import com.example.practies_app_firebase.viewModel.ViewModelNote
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,10 +38,22 @@ class NoteListingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Toast.makeText(requireContext(), "hamza is hero", Toast.LENGTH_SHORT).show()
         viewModel.getNotes()
-        viewModel.note.observe(viewLifecycleOwner) {
-            it.forEach {
-                Log.d("Safik", it.toString())
-            }
+        viewModel.note.observe(viewLifecycleOwner) {state->
+           when(state){
+               is Uistate.Loading ->{
+                   Log.d("safik","Loading ...")
+               }
+               is Uistate.Failure->{
+                   Log.d("safik",state.error.toString())
+               }
+               is Uistate.Success ->{
+                   state.data.forEach {
+                       Log.d("safik",it.toString())
+                   }
+               }
+
+
+           }
         }
     }
 }
