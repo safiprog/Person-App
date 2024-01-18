@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1014313506581",
+    "project_id": "fir-wtihmvvm",
+    "storage_bucket": "fir-wtihmvvm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014313506581:android:dd6cb045d5a69bda7dbb1c",
+        "android_client_info": {
+          "package_name": "com.example.practies_app_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjiqNfhS_vpIH-wX4ufXcDwbxkDYM8a0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
